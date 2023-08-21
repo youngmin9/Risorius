@@ -68,8 +68,8 @@ def get_empathetic_response(user_message):
 # Streamlit 앱
 def main():
     st.set_page_config(page_title="귀여운 공감 대화 봇", page_icon="🌸")
-    st.title("Gamjung Garbage: 감 정 쓰 레 기 통 🗑 ")
-    st.markdown("### ☘︎︎분노를 이곳에 훌훌 털어버리는 건 어떠세요? 🌈")
+    st.title("[Gamjung Garbage] 감정쓰레기통 🗑 ")
+    st.markdown("### ☘︎︎오늘 느낀 분노를 이곳에 훌훌 털어버리고 가세요 🌈")
     
     user_message = st.text_input("순간의 기분을 남겨주세요:")
     
