@@ -1,6 +1,6 @@
 streamlit
-streamlit-chat
+#streamlit-chat
 openai
-python-dotenv
+#python-dotenv
 textblob
-random
+#random
