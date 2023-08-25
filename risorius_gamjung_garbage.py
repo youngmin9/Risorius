@@ -1,5 +1,5 @@
 import streamlit as st
-#from textblob import TextBlob
+from textblob import TextBlob
 import random
 
 # 공감 표현 목록
@@ -64,7 +64,6 @@ empathetic_responses = {
         "연인과의 이별을 겪으면서 혼자서 모든 것을 해결하려고 하지 말아주세요. 지지를 받을 수 있는 사람들에게 도움을 청해보세요."
         "정말 나쁜 년이네요...어휴",
         "그 자식과 더 이상은 상종하지 않는게 좋을 것 같은데요?"
-
     ]
 }
 
@@ -77,18 +76,18 @@ angry_responses = [
     "지친 상태일 때는 가벼운 운동이나 산책도 도움이 될 수 있어요.",
     "와...진짜 빡칠듯 ㅠ",
     "빡치게 만든 상대에 대해 더 자세히 말해줘. 여기 욕도 퍼붓고. 나쁜 감정을 다 버리고 갈 수 있게!",    
-    # ... (분노에 관련된 응답들)
+    #... (분노에 관련된 응답들)
 ]
 
 
 company_responses = [
-     # 직장에 대한 분노
+    # 직장에 대한 분노
     "직장에서 불공정함을 느끼시는군요. 그런 상황이 정말 힘들겠어요.",
     "직장에서의 스트레스가 많아서 지친 느낌이신가요? 제가 응원할게요.",
     "상사나 동료와의 갈등 때문에 답답하시겠어요. 이야기하면서 해결책을 찾아보는 것도 좋을 것 같아요.",
     "일이 너무 바쁘고 힘들어서 짜증이 나는 거죠? 가끔은 휴식을 취하는 것도 중요해요.",
     "직장에서의 문제가 마음을 아프게 하고 있네요. 언제든지 이야기해주세요.",
-    "빡치게 만든 상대에 대해 더 자세히 말해줘. 여기 욕도 퍼붓고. 나쁜 감정을 다 버리고 갈 수 있게!"
+    "빡치게 만든 상대에 대해 더 자세히 말해줘. 여기 욕도 퍼붓고. 나쁜 감정을 다 버리고 갈 수 있게!",
     # 인간관계에서의 스트레스
     "인간관계에서의 스트레스가 커서 힘들겠어요. 이해하고 있어요.",
     "사람들과의 관계가 복잡하게 얽혀서 지친 느낌이신가요? 저에게 이야기해주세요.",
@@ -104,7 +103,7 @@ def get_empathetic_response(user_message):
     
     if sentiment > 0.3:
         return random.choice(empathetic_responses["positive"])
-    elif sentiment < -0.3:
+    elif sentiment < 0.3:
         if any(keyword in user_message for keyword in ["분노", "화나","빡쳐","죽여","빡"]):
             return random.choice(angry_responses)
         elif any(keyword in user_message for keyword in ["힘들", "스트레스","회사","직장","학교"]):
