@@ -1,5 +1,5 @@
 import streamlit as st
-from textblob import textblob
+from textblob import TextBlob
 import random
 
 # 공감 표현 목록
