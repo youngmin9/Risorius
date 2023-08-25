@@ -76,7 +76,7 @@ def main():
     if user_message:
         bot_response = get_empathetic_response(user_message)
         st.text("당신: " + user_message)
-        st.text("감쓰: " + bot_response)
+        st.text("봇: " + bot_response)
 
 if __name__ == "__main__":
     main()
